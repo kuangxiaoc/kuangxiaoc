@@ -1,0 +1,43 @@
+name: Update README SVGs
+
+on:
+  schedule:
+    # 每 6 小时刷新一次（UTC 0/6/12/18 点）
+    - cron: "0 0,6,12,18 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 生成 SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: ${{ github.repository_owner }}
+        run: python scripts/generate_svg.py
+
+      - name: 有变更才提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "无变更，跳过提交"
+          else
+            git commit -m "chore: refresh profile SVGs"
+            git push
+          fi
