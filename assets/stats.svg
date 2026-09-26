@@ -2,7 +2,7 @@
 <rect width="800" height="130" rx="10" fill="#0d1117" stroke="#30363d"/>
 <text x="20" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#e6edf3">GitHub 数据</text>
 <text x="780" y="26" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="10" fill="#8b949e">live</text>
-<text x="66" y="66" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#58a6ff">5</text>
+<text x="66" y="66" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#58a6ff">6</text>
 <text x="66" y="88" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e">Repos</text>
 <text x="199" y="66" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#e3b341">0</text>
 <text x="199" y="88" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e">Stars</text>
@@ -19,5 +19,5 @@
 <text x="731" y="66" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#3fb950">—</text>
 <text x="731" y="88" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="11" fill="#8b949e">Streak</text>
 <line x1="665" y1="44" x2="665" y2="100" stroke="#30363d" stroke-width="1"/>
-<text x="20" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="10" fill="#8b949e">语言分布 Python 3 · Shell 1 · Swift 1</text>
+<text x="20" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif" font-size="10" fill="#8b949e">语言分布 Python 4 · Shell 1 · Swift 1</text>
 </svg>
