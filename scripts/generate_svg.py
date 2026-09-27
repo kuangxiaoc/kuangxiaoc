@@ -66,7 +66,10 @@ def graphql(query: str):
         },
     )
     with urllib.request.urlopen(req, timeout=20) as r:
-        return json.load(r).get("data")
+        payload = json.load(r)
+    if payload.get("errors"):
+        print(f"[warn] GraphQL errors: {payload['errors']}", file=sys.stderr)
+    return payload.get("data")
 
 
 def esc(s: str) -> str:
@@ -101,7 +104,7 @@ query {
       totalPullRequestContributions
       totalIssueContributions
       contributionCalendar {
-        weeks { contributionDays { date contributionCount level } }
+        weeks { contributionDays { date contributionCount contributionLevel } }
       }
     }
   }
@@ -139,7 +142,10 @@ def summarize(d):
         commits = c.get("totalCommitContributions")
         prs = c.get("totalPullRequestContributions")
         for w in c.get("contributionCalendar", {}).get("weeks", []):
-            days.extend(w.get("contributionDays", []))
+            for day in w.get("contributionDays", []):
+                # GraphQL 给的是枚举，统一成 0-4 的 level 供画图用
+                day["level"] = LEVEL_MAP.get(day.get("contributionLevel"), 0)
+                days.append(day)
         # 连续贡献天数（从今天往回数）
         cur = 0
         for day in reversed(days):
@@ -290,6 +296,8 @@ def svg_stats(stats) -> str:
 
 
 LEVEL = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+LEVEL_MAP = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2,
+             "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
 
 
 def svg_grass(stats) -> str:
