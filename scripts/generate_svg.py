@@ -12,7 +12,6 @@
   assets/stats.svg      数据卡：repos / stars / followers / commits / streak
   assets/grass.svg      贡献热力图（近 26 周，需 token）
   assets/activity.svg   最近公开动态
-  assets/focus.svg      当前重心进度条 + 里程碑倒计时（数据源 data/focus.json）
 """
 
 from __future__ import annotations
@@ -356,45 +355,6 @@ def svg_activity(events) -> str:
     return "\n".join(p)
 
 
-def svg_focus(focus) -> str:
-    w = 800
-    items = focus.get("items", [])
-    ms = focus.get("milestones", [])
-    h = 78 + 42 * len(items) + (34 + 22 * len(ms) if ms else 0)
-    p = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img">',
-         f'<rect width="{w}" height="{h}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
-         f'<text x="20" y="28" font-family="{FONT}" font-size="12" font-weight="600" fill="{FG}">'
-         f'当前重心 · {esc(focus.get("updated",""))}</text>',
-         f'<text x="{w-20}" y="28" text-anchor="end" font-family="{FONT}" font-size="10" fill="{MUTED}">'
-         f'{esc(clip(focus.get("note",""),40))}</text>']
-    bar_w = w - 40 - 60
-    for i, it in enumerate(items):
-        y = 56 + i * 42
-        pct = max(0, min(100, int(it.get("pct", 0))))
-        p.append(f'<text x="20" y="{y+12}" font-family="{FONT}" font-size="11.5" fill="{FG}">{esc(it["name"])}</text>')
-        p.append(f'<text x="{w-20}" y="{y+12}" text-anchor="end" font-family="{FONT}" font-size="10" '
-                 f'fill="{MUTED}">{pct}%</text>')
-        p.append(f'<rect x="20" y="{y+20}" width="{bar_w}" height="7" rx="3.5" fill="#21262d"/>')
-        p.append(f'<rect x="20" y="{y+20}" width="{int(bar_w*pct/100)}" height="7" rx="3.5" fill="url(#pb)"/>')
-    if items:
-        p.insert(2, f'<defs><linearGradient id="pb" x1="0" y1="0" x2="1" y2="0">'
-                    f'<stop offset="0%" stop-color="#1f6feb"/><stop offset="100%" stop-color="#a371f7"/>'
-                    f'</linearGradient></defs>')
-    y = 56 + 42 * len(items) + 10
-    today = dt.date.today()
-    for m in ms:
-        try:
-            target = dt.date.fromisoformat(m["date"])
-            left = (target - today).days
-        except Exception:
-            continue
-        p.append(f'<text x="20" y="{y+12}" font-family="{FONT}" font-size="11" fill="{MUTED}">'
-                 f'{esc(m["label"])} 还有 <tspan fill="{ACCENT}" font-weight="600">{left}</tspan> 天</text>')
-        y += 22
-    p.append('</svg>')
-    return "\n".join(p)
-
-
 # ---------------------------------------------------------------- main
 
 def write(name: str, content: str):
@@ -413,14 +373,10 @@ def main():
     stats = summarize(d)
     events = parse_events(d["events"])
 
-    with open(os.path.join(ROOT, "data", "focus.json"), encoding="utf-8") as f:
-        focus = json.load(f)
-
     write("banner.svg", svg_banner(stats))
     write("stats.svg", svg_stats(stats))
     write("grass.svg", svg_grass(stats))
     write("activity.svg", svg_activity(events))
-    write("focus.svg", svg_focus(focus))
     print("done. graphql:", bool(d["contrib"]), "rest_ok:", d["ok"])
 
 
