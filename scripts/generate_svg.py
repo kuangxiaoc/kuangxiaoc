@@ -28,14 +28,14 @@ TOKEN = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 
-# GitHub 深浅色模式下都可读的一套自包含深色卡片配色
-BG = "#0d1117"
-BORDER = "#30363d"
-FG = "#e6edf3"
-MUTED = "#8b949e"
-ACCENT = "#58a6ff"
-GREEN = "#3fb950"
-PURPLE = "#a371f7"
+# 淡蓝卡片配色：卡片自带浅色底 + 深色字，GitHub 浅色/深色模式下都可读
+BG = "#eaf3fd"
+BORDER = "#a8caf0"
+FG = "#0b3d63"
+MUTED = "#4a6b8a"
+ACCENT = "#1f6feb"
+GREEN = "#1a7f37"
+PURPLE = "#8250df"
 FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif"
 
 
@@ -245,10 +245,10 @@ def svg_banner(stats) -> str:
     p = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img">',
         f'<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">'
-        f'<stop offset="0%" stop-color="#0d1117"/><stop offset="55%" stop-color="#161b22"/>'
-        f'<stop offset="100%" stop-color="#1f2b47"/></linearGradient>'
+        f'<stop offset="0%" stop-color="#f7fbff"/><stop offset="55%" stop-color="#e6f1fd"/>'
+        f'<stop offset="100%" stop-color="#cfe4fb"/></linearGradient>'
         f'<linearGradient id="t" x1="0" y1="0" x2="1" y2="0">'
-        f'<stop offset="0%" stop-color="#58a6ff"/><stop offset="100%" stop-color="#a371f7"/></linearGradient></defs>',
+        f'<stop offset="0%" stop-color="#1f6feb"/><stop offset="100%" stop-color="#8250df"/></linearGradient></defs>',
         f'<rect width="{w}" height="{h}" rx="12" fill="url(#g)" stroke="{BORDER}"/>',
         f'<text x="36" y="66" font-family="{FONT}" font-size="30" font-weight="700" fill="url(#t)">蔡超 · Cai Chao</text>',
         f'<text x="36" y="94" font-family="{FONT}" font-size="14" fill="{FG}">LLM 应用工程 · AI Agent 工程化</text>',
@@ -267,7 +267,7 @@ def svg_stats(stats) -> str:
     w, h = 800, 130
     items = [
         ("Repos", stats["repos"], ACCENT),
-        ("Stars", stats["stars"], "#e3b341"),
+        ("Stars", stats["stars"], "#9a6700"),
         ("Followers", stats["followers"], GREEN),
         ("Commits", stats["commits"] if stats["commits"] is not None else "—", PURPLE),
         ("PRs", stats["prs"] if stats["prs"] is not None else "—", ACCENT),
@@ -294,7 +294,7 @@ def svg_stats(stats) -> str:
     return "\n".join(p)
 
 
-LEVEL = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+LEVEL = ["#ccdcee", "#b6e3c6", "#7fd39a", "#46b970", "#2f9257"]
 LEVEL_MAP = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2,
              "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
 
@@ -339,7 +339,7 @@ def svg_activity(events) -> str:
         p.append(f'<text x="20" y="60" font-family="{FONT}" font-size="11" fill="{MUTED}">暂无公开动态</text>')
     for i, e in enumerate(events):
         y = 52 + i * row
-        p.append(f'<rect x="20" y="{y}" width="52" height="18" rx="9" fill="#1f6feb33" stroke="#1f6feb66"/>')
+        p.append(f'<rect x="20" y="{y}" width="52" height="18" rx="9" fill="#d3e6fb" stroke="#8fb8ea"/>')
         p.append(f'<text x="46" y="{y+13}" text-anchor="middle" font-family="{FONT}" font-size="10" '
                  f'fill="{ACCENT}">{esc(e["label"])}</text>')
         p.append(f'<text x="84" y="{y+13}" font-family="{FONT}" font-size="12" font-weight="600" '
