@@ -8,7 +8,6 @@
 3. 网络失败不炸：降级生成占位卡片，保证 Actions 不红。
 
 输出：
-  assets/banner.svg     标题横幅（含最后更新时间）
   assets/stats.svg      数据卡：repos / stars / followers / commits / streak
   assets/grass.svg      贡献热力图（近 26 周，需 token）
   assets/activity.svg   最近公开动态
@@ -238,31 +237,6 @@ def card_head(w: int, title: str, sub: str = "") -> list:
     return parts
 
 
-def svg_banner(stats) -> str:
-    w, h = 800, 150
-    now = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
-    langs = " · ".join(f"{n}" for n, _ in stats["top_langs"][:4]) or "Python"
-    p = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img">',
-        f'<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">'
-        f'<stop offset="0%" stop-color="#f7fbff"/><stop offset="55%" stop-color="#e6f1fd"/>'
-        f'<stop offset="100%" stop-color="#cfe4fb"/></linearGradient>'
-        f'<linearGradient id="t" x1="0" y1="0" x2="1" y2="0">'
-        f'<stop offset="0%" stop-color="#1f6feb"/><stop offset="100%" stop-color="#8250df"/></linearGradient></defs>',
-        f'<rect width="{w}" height="{h}" rx="12" fill="url(#g)" stroke="{BORDER}"/>',
-        f'<text x="36" y="66" font-family="{FONT}" font-size="30" font-weight="700" fill="url(#t)">蔡超 · Cai Chao</text>',
-        f'<text x="36" y="94" font-family="{FONT}" font-size="14" fill="{FG}">LLM 应用工程 · AI Agent 工程化</text>',
-        f'<text x="36" y="116" font-family="{FONT}" font-size="12" fill="{MUTED}">'
-        f'浙江师范大学 电子信息（软件工程与大模型应用）在读 · 杭州</text>',
-        f'<text x="{w-36}" y="66" text-anchor="end" font-family="{FONT}" font-size="12" fill="{MUTED}">{esc(langs)}</text>',
-        f'<text x="{w-36}" y="86" text-anchor="end" font-family="{FONT}" font-size="11" fill="{MUTED}">'
-        f'streak {stats["streak"]} 天</text>' if stats["streak"] else '',
-        f'<text x="{w-36}" y="116" text-anchor="end" font-family="{FONT}" font-size="11" fill="{MUTED}">更新 {now}</text>',
-        '</svg>',
-    ]
-    return "\n".join(p)
-
-
 def svg_stats(stats) -> str:
     w, h = 800, 130
     items = [
@@ -373,7 +347,6 @@ def main():
     stats = summarize(d)
     events = parse_events(d["events"])
 
-    write("banner.svg", svg_banner(stats))
     write("stats.svg", svg_stats(stats))
     write("grass.svg", svg_grass(stats))
     write("activity.svg", svg_activity(events))
