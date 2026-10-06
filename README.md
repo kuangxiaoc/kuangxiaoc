@@ -32,7 +32,7 @@ LLM 应用工程 · AI Agent 工程化
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/kuangxiaoc?variant=radar&lang=zh)](https://ghfind.com/u/kuangxiaoc?ref=badge)
 
-[![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?graph=1&today=1&rank=percent&tokens=full&cost=full)](https://tokens.ci/u/kuangxiaoc)
+[![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?theme=light&template=graph&color=blue&today=1&rank=percent&tokens=compact&cost=compact)](https://tokens.ci/u/kuangxiaoc)
 
 ---
 
