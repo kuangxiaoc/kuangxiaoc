@@ -30,15 +30,9 @@ LLM 应用工程 · AI Agent 工程化
 
 ## 数据
 
-<img src="assets/stats.svg" width="800" alt="GitHub 数据"/>
-
-<img src="assets/grass.svg" alt="贡献热力图"/>
+[![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?graph=1&today=1&rank=percent&tokens=full&cost=full)](https://tokens.ci/u/kuangxiaoc)
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/kuangxiaoc?lang=zh)](https://ghfind.com/u/kuangxiaoc?ref=badge)
-
-<img src="assets/activity.svg" width="800" alt="最近动态"/>
-
-> 卡片由 GitHub Actions 每 6 小时自动重绘：统计走 REST，commit 数与贡献热力图走 GraphQL（用仓库自带的 `GITHUB_TOKEN`，无需额外配置密钥）。
 
 ---
 
