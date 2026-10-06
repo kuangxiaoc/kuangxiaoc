@@ -30,9 +30,9 @@ LLM 应用工程 · AI Agent 工程化
 
 ## 数据
 
-[![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?graph=1&today=1&rank=percent&tokens=full&cost=full)](https://tokens.ci/u/kuangxiaoc)
-
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/kuangxiaoc?variant=radar&lang=zh)](https://ghfind.com/u/kuangxiaoc?ref=badge)
+
+[![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?graph=1&today=1&rank=percent&tokens=full&cost=full)](https://tokens.ci/u/kuangxiaoc)
 
 ---
 
