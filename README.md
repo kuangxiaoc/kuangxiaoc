@@ -1,41 +1,126 @@
-# Xiao Cai
+<div align="center">
 
-LLM 应用工程 · AI Agent 工程化
-浙江师范大学 · 电子信息（软件工程与大模型应用）在读 · 杭州
-[c1156269458@gmail.com](mailto:c1156269458@gmail.com) · [@kuangxiaoc](https://github.com/kuangxiaoc)
+<br/>
+
+<sub><samp>HANGZHOU &nbsp;·&nbsp; LLM APPLICATION ENGINEERING &nbsp;·&nbsp; SINCE 2022</samp></sub>
+
+<br/><br/>
+
+# 蔡 超
+
+<samp>Xiao Cai &nbsp;/&nbsp; AI Agent 工程化 &nbsp;/&nbsp; LLM × 符号音乐</samp>
+
+<br/>
+
+<sub>
+浙江师范大学 · 电子信息（软件工程与大模型应用）在读<br/>
+<a href="mailto:c1156269458@gmail.com">c1156269458@gmail.com</a> &nbsp;·&nbsp; <a href="https://github.com/kuangxiaoc">@kuangxiaoc</a>
+</sub>
+
+<br/><br/>
+
+</div>
 
 ---
 
-## 关于我
+<br/>
 
-本科人工智能，研究生转向软件工程与大模型应用。主攻 **LLM 应用工程 / AI Agent 工程化**——把大模型能力落到能跑通、可验证、可维护的系统里，而不是停在 demo。
+> 把大模型能力落到**能跑通、可验证、可维护**的系统里，<br/>
+> 而不是停在 demo。
 
-能力集中在三块：
+<br/>
 
-- **Agent 工作流编排**：LangGraph / LangChain 状态机、工具调用、结果校验与重试，处理不确定的模型输出。
-- **文档摄入与结构化抽取**：PDF → 结构化数据，规则匹配与大模型判定结合，并发、限流、断点续跑。
-- **检索与知识图谱**：语义检索 + Cypher 图查询双路召回，补上纯向量检索缺失的结构信息。
+## <samp>01</samp> &nbsp; 关于 &nbsp;<sub><samp>ABOUT</samp></sub>
 
-科研侧在 LLM 与音乐生成的交叉方向：用 Agent 从模型偏好排名中抽取可解释规则，再用确定性验证器自动验证修复。
+本科人工智能，研究生转向软件工程与大模型应用。工作集中在三条线：
 
-## 技术栈
+| | | |
+| :-- | :-- | :-- |
+| **编排** | Agent 工作流 | LangGraph / LangChain 状态机、工具调用、结果校验与重试，处理不确定的模型输出 |
+| **摄入** | 文档结构化抽取 | PDF → 结构化数据，规则匹配与大模型判定结合，并发、限流、断点续跑 |
+| **检索** | 图谱与双路召回 | 语义检索 + Cypher 图查询，补上纯向量检索缺失的结构信息 |
 
-| 领域 | 关键词 |
-| :--- | :--- |
-| AI Agent | LangGraph、LangChain、工具调用、状态机编排、Critic 校验、重试与工作流拆解 |
-| 检索增强 | RAG / GraphRAG、Neo4j、Cypher、语义检索、图关系链路追踪 |
-| 后端 | Python、FastAPI、PostgreSQL、Pydantic、Asyncio、Docker、Git |
-| 模型 | PyTorch、Transformer、REMI / 符号 Tokenization |
-| LLM × 音乐（研究） | 验证器引导生成、LLM 反思与规则提取、RLHF / DPO 基础 |
+科研侧在 LLM 与音乐生成的交叉方向：用 Agent 从模型偏好排名中抽取可解释规则，再用确定性验证器自动验证与修复。
 
-## 数据
+<br/>
+
+## <samp>02</samp> &nbsp; 作品 &nbsp;<sub><samp>SELECTED WORK</samp></sub>
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+<samp>2025.11 — </samp>
+
+**CodeGraph Pilot**
+
+基于 AST 静态分析与知识图谱的代码影响分析 Agent。Python `ast` → Neo4j 代码知识图谱，LangGraph 四阶段状态机（抽取 → 检索 → 生成 → 审查），以单一 MCP 工具对外暴露。
+
+<sub>218 个离线单测 · 幻觉率 3.6% / grounding recall 100%（n=30）· 悬空边 0</sub>
+
+</td>
+<td width="33%" valign="top">
+
+<samp>2026.01 — 2026.03</samp>
+
+**建筑资料智能提取**
+
+杭州捷扫科技 · Agent 开发实习。独立开发「分类 → 识别 → 校验 → 抽取 → 合并」五步流水线，Asyncio 并发 + 缓存 / 限流 / 重试 / 断点续跑，动态数据模型支持多类资料。
+
+<sub>LangChain · Pydantic · Asyncio</sub>
+
+</td>
+<td width="33%" valign="top">
+
+<samp>2026.05</samp>
+
+**音乐规则挖掘**
+
+科研项目，已投稿。LLM-Agent 从神经网络偏好排名中自动提取可解释音乐规则；设计 BAR / Onset / Pitch / Duration 符号 Token 方案；确定性验证器闭环修复。
+
+<sub>LLM-Agent · Tokenization · Verifier</sub>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## <samp>03</samp> &nbsp; 技术 &nbsp;<sub><samp>STACK</samp></sub>
+
+| | |
+| :-- | :-- |
+| <samp>AGENT</samp> | LangGraph · LangChain · 工具调用 · 状态机编排 · Critic 校验 · 重试与工作流拆解 |
+| <samp>RAG</samp> | RAG / GraphRAG · Neo4j · Cypher · 语义检索 · 图关系链路追踪 |
+| <samp>CORE</samp> | Python · FastAPI · PostgreSQL · Pydantic · Asyncio · Docker · Git |
+| <samp>MODEL</samp> | PyTorch · Transformer · REMI / 符号 Tokenization · RLHF / DPO 基础 |
+
+<br/>
+
+## <samp>04</samp> &nbsp; 开源 &nbsp;<sub><samp>OPEN SOURCE</samp></sub>
+
+**[resume-builder](https://github.com/kuangxiaoc/resume-builder)** &nbsp;<sub>MIT</sub><br/>
+跨 agent 简历生成 skill：按 JD 从个人 `profile.yaml` 裁剪改写，输出 1 页 A4 LaTeX 简历 PDF。支持 Claude Code / Codex / WorkBuddy，契约 / 模板 / 脚本三层拆分。
+
+<br/>
+
+## <samp>05</samp> &nbsp; 数据 &nbsp;<sub><samp>SIGNALS</samp></sub>
+
+<div align="center">
 
 [![GitHub Roast 评分卡](https://ghfind.com/api/card/mini/kuangxiaoc?lang=zh)](https://ghfind.com/u/kuangxiaoc?ref=badge)
 
 [![Tokens Stats](https://tokens.ci/api/embed/kuangxiaoc/svg?theme=light&template=graph&color=blue&today=1&rank=percent&tokens=compact&cost=compact)](https://tokens.ci/u/kuangxiaoc)
 
+</div>
+
+<br/>
+
 ---
 
-简历 PDF 可邮件索取，或用 [resume-builder](https://github.com/kuangxiaoc/resume-builder) 自己跑一份。
-
-<sub>最后更新：2026-09</sub>
+<div align="center">
+<sub>
+简历 PDF 可邮件索取，或用 <a href="https://github.com/kuangxiaoc/resume-builder">resume-builder</a> 自己跑一份。<br/><br/>
+<samp>LAST UPDATED &nbsp;2026 · 10</samp>
+</sub>
+</div>
