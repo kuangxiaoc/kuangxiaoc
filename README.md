@@ -118,7 +118,7 @@ Agent 开发实习。独立开发「分类 → 识别 → 校验 → 抽取 → 
 
 <div align="center">
 
-简历 PDF 可邮件索取，或用 <a href="https://github.com/kuangxiaoc/resume-builder">resume-builder</a> 自己跑一份。
+简历 PDF 可邮件索取。
 
 <samp>LAST UPDATED &nbsp;2026 · 10</samp>
 
