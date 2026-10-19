@@ -2,7 +2,7 @@
 
 <br/>
 
-<sub><samp>HANGZHOU &nbsp;·&nbsp; LLM APPLICATION ENGINEERING &nbsp;·&nbsp; SINCE 2022</samp></sub>
+<samp>HANGZHOU &nbsp;·&nbsp; LLM APPLICATION ENGINEERING &nbsp;·&nbsp; SINCE 2022</samp>
 
 <br/><br/>
 
@@ -12,10 +12,8 @@
 
 <br/>
 
-<sub>
 浙江师范大学 · 电子信息（软件工程与大模型应用）在读<br/>
 <a href="mailto:c1156269458@gmail.com">c1156269458@gmail.com</a> &nbsp;·&nbsp; <a href="https://github.com/kuangxiaoc">@kuangxiaoc</a>
-</sub>
 
 <br/><br/>
 
@@ -30,7 +28,7 @@
 
 <br/>
 
-## <samp>01</samp> &nbsp; 关于 &nbsp;<sub><samp>ABOUT</samp></sub>
+## <samp>01</samp> &nbsp; 关于
 
 本科人工智能，研究生转向软件工程与大模型应用。工作集中在三条线：
 
@@ -44,7 +42,7 @@
 
 <br/>
 
-## <samp>02</samp> &nbsp; 作品 &nbsp;<sub><samp>SELECTED WORK</samp></sub>
+## <samp>02</samp> &nbsp; 作品
 
 <table>
 <tr>
@@ -56,7 +54,7 @@
 
 基于 AST 静态分析与知识图谱的代码影响分析 Agent。Python `ast` → Neo4j 代码知识图谱，LangGraph 四阶段状态机（抽取 → 检索 → 生成 → 审查），以单一 MCP 工具对外暴露。
 
-<sub>218 个离线单测 · 幻觉率 3.6% / grounding recall 100%（n=30）· 悬空边 0</sub>
+<samp>218 个离线单测 · 幻觉率 3.6% · grounding recall 100%（n=30）</samp>
 
 </td>
 <td width="33%" valign="top">
@@ -65,9 +63,9 @@
 
 **建筑资料智能提取**
 
-杭州捷扫科技 · Agent 开发实习。独立开发「分类 → 识别 → 校验 → 抽取 → 合并」五步流水线，Asyncio 并发 + 缓存 / 限流 / 重试 / 断点续跑，动态数据模型支持多类资料。
+Agent 开发实习。独立开发「分类 → 识别 → 校验 → 抽取 → 合并」五步流水线，Asyncio 并发 + 缓存 / 限流 / 重试 / 断点续跑，动态数据模型支持多类资料。
 
-<sub>LangChain · Pydantic · Asyncio</sub>
+<samp>LangChain · Pydantic · Asyncio</samp>
 
 </td>
 <td width="33%" valign="top">
@@ -78,7 +76,7 @@
 
 科研项目，已投稿。LLM-Agent 从神经网络偏好排名中自动提取可解释音乐规则；设计 BAR / Onset / Pitch / Duration 符号 Token 方案；确定性验证器闭环修复。
 
-<sub>LLM-Agent · Tokenization · Verifier</sub>
+<samp>LLM-Agent · Tokenization · Verifier</samp>
 
 </td>
 </tr>
@@ -86,7 +84,7 @@
 
 <br/>
 
-## <samp>03</samp> &nbsp; 技术 &nbsp;<sub><samp>STACK</samp></sub>
+## <samp>03</samp> &nbsp; 技术
 
 | | |
 | :-- | :-- |
@@ -97,14 +95,14 @@
 
 <br/>
 
-## <samp>04</samp> &nbsp; 开源 &nbsp;<sub><samp>OPEN SOURCE</samp></sub>
+## <samp>04</samp> &nbsp; 开源
 
-**[resume-builder](https://github.com/kuangxiaoc/resume-builder)** &nbsp;<sub>MIT</sub><br/>
+**[resume-builder](https://github.com/kuangxiaoc/resume-builder)** &nbsp;<samp>MIT</samp><br/>
 跨 agent 简历生成 skill：按 JD 从个人 `profile.yaml` 裁剪改写，输出 1 页 A4 LaTeX 简历 PDF。支持 Claude Code / Codex / WorkBuddy，契约 / 模板 / 脚本三层拆分。
 
 <br/>
 
-## <samp>05</samp> &nbsp; 数据 &nbsp;<sub><samp>SIGNALS</samp></sub>
+## <samp>05</samp> &nbsp; 数据
 
 <div align="center">
 
@@ -119,8 +117,9 @@
 ---
 
 <div align="center">
-<sub>
-简历 PDF 可邮件索取，或用 <a href="https://github.com/kuangxiaoc/resume-builder">resume-builder</a> 自己跑一份。<br/><br/>
+
+简历 PDF 可邮件索取，或用 <a href="https://github.com/kuangxiaoc/resume-builder">resume-builder</a> 自己跑一份。
+
 <samp>LAST UPDATED &nbsp;2026 · 10</samp>
-</sub>
+
 </div>
